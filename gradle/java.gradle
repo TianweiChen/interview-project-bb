@@ -1,0 +1,22 @@
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+
+sourceCompatibility = '1.7'
+targetCompatibility = '1.7'
+
+jar {
+  baseName = "bb-training"
+}
+
+tasks.withType(JavaCompile) {
+  options.encoding = 'UTF-8'
+}
+
+sourceSets {
+  integrationTest {
+    compileClasspath = sourceSets.main.output + configurations.testRuntime
+    runtimeClasspath = output + sourceSets.main.output + configurations.testRuntime
+  }
+}
+

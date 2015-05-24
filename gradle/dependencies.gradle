@@ -1,0 +1,45 @@
+ext {
+  springVersion = '4.1.1.RELEASE'
+  springWsVersion = "2.2.0.RELEASE"
+  spockVersion = '0.7-groovy-2.0'
+
+  jacksonVersion = '2.4.1.1'
+  jacksonDatatypeJodaVersion = '2.4.3'
+
+  groovyVersion = '2.3.7'
+
+  objenesisVersion = '2.1'
+  cglibVersion = '3.1'
+
+  commonsIoVersion = '2.4'
+
+  jacksonDataBindVersion = '2.5.0'
+
+  gsonVersion = '2.3.1'
+
+  servletVersion = '3.1.0'
+}
+
+dependencies {
+
+  compile "org.springframework.ws:spring-ws-core:$springWsVersion"
+  compile "org.springframework:spring-web:$springVersion"
+  compile "org.springframework:spring-webmvc:$springVersion"
+  compile "org.springframework:spring-tx:$springVersion"
+  compile "commons-io:commons-io:$commonsIoVersion"
+
+  compile "com.google.code.gson:gson:$gsonVersion"
+  compile "com.fasterxml.jackson.core:jackson-databind:$jacksonDataBindVersion"
+
+  compile "javax.servlet:javax.servlet-api:$servletVersion"
+
+  testCompile "org.springframework:spring-test:$springVersion"
+  testCompile "org.codehaus.groovy:groovy-all:$groovyVersion"
+  testCompile "org.spockframework:spock-core:$spockVersion"
+  testCompile "org.spockframework:spock-spring:$spockVersion"
+  testCompile "org.objenesis:objenesis:$objenesisVersion"
+  testRuntime "cglib:cglib:$cglibVersion"
+
+
+}
+
