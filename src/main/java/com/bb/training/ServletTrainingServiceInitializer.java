@@ -14,7 +14,7 @@ import javax.servlet.ServletRegistration;
 /**
  * Creates and registers Spring MVC DispatcherServlet upon container startup.
  */
-class ServletTrainingServiceInitializer implements WebApplicationInitializer
+public class ServletTrainingServiceInitializer implements WebApplicationInitializer
 {
   @Override
   public void onStartup(ServletContext servletContext) throws ServletException

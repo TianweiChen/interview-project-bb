@@ -12,19 +12,23 @@ dependencies {
   tomcat("org.apache.tomcat.embed:tomcat-embed-jasper:$tomcatVersion") {
     exclude group: 'org.eclipse.jdt.core.compiler', module: 'ecj'
   }
+
+    //service-core from shared-libs configures the Apache CorsFilter.
+  //need to add the dependency here to make swagger work
+  providedRuntime "org.apache.tomcat:tomcat-catalina:$tomcatVersion"
 }
 
-[tomcatRun, tomcatRunWar, tomcatStop].each {
-  it.with {
-    stopPort = project.tomcatStopPort
-    stopKey = 'stopKey'
-  }
-}
-
-[tomcatRun, tomcatRunWar].each {
-  it.with {
-    contextPath = ""
-    httpPort = project.tomcatHttpPort
-    ajpPort = project.tomcatAjpPort
-  }
-}
+//[tomcatRun, tomcatRunWar, tomcatStop].each {
+//  it.with {
+//    stopPort = project.tomcatStopPort
+//    stopKey = 'stopKey'
+//  }
+//}
+//
+//[tomcatRun, tomcatRunWar].each {
+//  it.with {
+//    contextPath = ""
+//    httpPort = project.tomcatHttpPort
+//    ajpPort = project.tomcatAjpPort
+//  }
+//}

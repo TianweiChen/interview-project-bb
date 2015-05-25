@@ -1,3 +1,14 @@
+buildscript {
+  dependencies {
+    def gradleTomcatPluginVersion = '1.2.4'
+    classpath "org.gradle.api.plugins:gradle-tomcat-plugin:$gradleTomcatPluginVersion"
+  }
+}
+
+wrapper {
+  gradleVersion '2.2.1'
+}
+
 apply plugin: 'java'
 
 apply from: "${rootProject.projectDir}/gradle/war.gradle"
